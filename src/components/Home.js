@@ -1,25 +1,27 @@
 import React, { useState } from 'react'
 import '../style.css'
-import searchImg from '../images/search.png'
-import cloudsImg from '../images/clouds.jpg'
-import rainImg from '../images/rain.png'
-import sunnyImg from '../images/clear.jpg'
-import mistImg from '../images/mist.png'
-import drizzleImg from '../images/drizzle.png'
-import humidityIcon from '../images/humidty.jpg'
-import windSpeed from '../images/windSpeed.jpg'
+import searchImg from '../images/search.svg'
+import cloudsImg from '../images/clouds.svg'
+import rainImg from '../images/rain.svg'
+import sunnyImg from '../images/sun.svg'
+import mistImg from '../images/mist1.svg'
+import drizzleImg from '../images/drizzle.svg'
+import humidityIcon from '../images/humidity.svg'
+import windSpeed from '../images/windSpeedB.svg'
+
 import axios from 'axios';
 
 function Home() {
     const [name, setName] = useState('')
     const [image, setImage] = useState('')
+
     const [data, setData] = useState({
         celcius : 10,
         name: 'London',
         humidity : 10,
         speed : 2,
     })
-
+    
     const handleClick = () =>{
         if(name !== ""){
             const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=87f94cececbd9eb20a0d9ec817c1ab22&units=metric`
@@ -64,7 +66,7 @@ function Home() {
             <div className="search">
                 <input type="text" placeholder='Enter City Name' onChange={e => setName(e.target.value)}/>
                 <button>
-                    <img src={searchImg} onClick={handleClick()} alt="loading.." />
+                    <img src={searchImg} onClick={handleClick} alt="loading.." />
                 </button>
             </div>
             <div className="winfo">
