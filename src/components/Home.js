@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../style.css'
 import searchImg from '../images/search.svg'
+import neutral from '../images/neutral.svg'
 import cloudsImg from '../images/clouds.svg'
 import rainImg from '../images/rain.svg'
 import sunnyImg from '../images/sun.svg'
@@ -13,14 +14,14 @@ import axios from 'axios';
 
 function Home() {
     const [name, setName] = useState('')
-    const [image, setImage] = useState('')
+    const [image, setImage] = useState(`${neutral}`)
 
     const [data, setData] = useState({
-        celcius : 10,
-        name: 'London',
-        humidity : 10,
-        speed : 2,
-        description : ""
+        celcius : 0,
+        name: 'Your City',
+        humidity : 0,
+        speed : 0,
+        description : "None"
     })
     
     const handleClick = () =>{
