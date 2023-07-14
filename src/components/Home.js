@@ -86,7 +86,7 @@ function Home() {
                     <div className="col">
                         <img src={windSpeed} alt="" />
                             <div className='windSpeed'>
-                                <p>{data.speed}Km/hr</p>
+                                <p>{data.speed} Kmph</p>
                                 <p>Wind</p>
                             </div>                        
                     </div>
