@@ -4,7 +4,7 @@ import searchImg from '../images/search.svg'
 import cloudsImg from '../images/clouds.svg'
 import rainImg from '../images/rain.svg'
 import sunnyImg from '../images/sun.svg'
-import mistImg from '../images/mist1.svg'
+import mistImg from '../images/mist.png'
 import drizzleImg from '../images/drizzle.svg'
 import humidityIcon from '../images/humidity.svg'
 import windSpeed from '../images/windSpeedB.svg'
@@ -20,6 +20,7 @@ function Home() {
         name: 'London',
         humidity : 10,
         speed : 2,
+        description : ""
     })
     
     const handleClick = () =>{
@@ -54,7 +55,7 @@ function Home() {
                     name : res.data.name,
                     humidity : res.data.main.humidity,
                     speed : res.data.wind.speed,
-                    // image : imagePath
+                    description : res.data.weather[0].description
                 })
             })
             .catch(err => console.log(err));
@@ -72,6 +73,7 @@ function Home() {
             <div className="winfo">
                 <img src={image} alt="loading" className='icon' />
                 <h1>{Math.round(data.celcius)}°C</h1>
+                <h3>{data.description}</h3>
                 <h2>{data.name}</h2>
                 <div className="details">
                     <div className="col">
